@@ -7,46 +7,37 @@
     <title>SpendWise | Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <aside class="sidebar">
-
         <p class="heading"><i>Spend</i><b>Wise</b></p>
 
         <nav>
-            <a class="nav-link active" href="dashboard.html">⌂ Dashboard</a>
+            <a class="nav-link active" href="index.html">⌂ Dashboard</a>
             <a class="nav-link" href="Transaction.html">⇄ Transactions</a>
-            <a class="nav-link" href="Analytics.html">▥ Analytics</a>
+            <a class="nav-link" href="analytics.html">▥ Analytics</a>
             <a class="nav-link" href="Budget.html">◎ Budget</a>
             <a class="nav-link" href="Goals.html">◉ Goals</a>
             <a class="nav-link" href="Reports.html">▤ Reports</a>
         </nav>
 
-        <p class="tagline">
-            Small steps.<br>
-            Big financial goals.
-        </p>
-
+        <p class="tagline">Small steps.<br>Big financial goals.</p>
     </aside>
 
     <main class="main-content">
 
         <section class="header">
-
             <div class="search-container">
                 <span class="search-icon">⌕</span>
-                <input type="text" placeholder="Search transactions..."
-                       class="search-bar">
+                <input type="text" placeholder="Search transactions..." class="search-bar">
             </div>
 
             <div class="header-right">
-                <div class="bell-icon">&#x1F514</div>
+                <div class="bell-icon">&#x1F514;</div>
                 <div class="account-container">
                     <p class="account">H</p>
                 </div>
             </div>
-
         </section>
 
         <section class="spendwise">
@@ -93,11 +84,9 @@
         <section class="spending-overview">
 
             <div class="so-icon">
-
                 <h3>Spending Overview</h3>
 
                 <div class="spending-chart">
-
                     <div class="donut-wrapper">
                         <canvas id="spendChart"></canvas>
 
@@ -108,89 +97,70 @@
                     </div>
 
                     <div class="spending-details">
-
                         <div class="trans">
                             <span class="legend-dot food"></span>
                             <p class="s-item">Food & Dining: ₹400</p>
                         </div>
-
                         <div class="trans">
                             <span class="legend-dot transport"></span>
                             <p class="s-item">Transportation: ₹200</p>
                         </div>
-
                         <div class="trans">
                             <span class="legend-dot entertainment"></span>
                             <p class="s-item">Entertainment: ₹150</p>
                         </div>
-
                         <div class="trans">
                             <span class="legend-dot utilities"></span>
                             <p class="s-item">Utilities: ₹100</p>
                         </div>
-
                         <div class="trans">
                             <span class="legend-dot healthcare"></span>
                             <p class="s-item">Healthcare: ₹250</p>
                         </div>
-
                         <div class="trans">
                             <span class="legend-dot others"></span>
                             <p class="s-item">Others: ₹100</p>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
             <div class="so-icon">
-
                 <h3>Recent Transactions</h3>
 
                 <div class="recent-transactions">
-
                     <div class="transaction">
                         <span class="transaction-icon">🍔</span>
                         <p class="t-item">Zomato</p>
                         <span class="expense">-₹320</span>
                     </div>
-
                     <div class="transaction">
                         <span class="transaction-icon">🚕</span>
                         <p class="t-item">Uber</p>
                         <span class="expense">-₹250</span>
                     </div>
-
                     <div class="transaction">
                         <span class="transaction-icon">♫</span>
                         <p class="t-item">Spotify</p>
                         <span class="expense">-₹149</span>
                     </div>
-
                     <div class="transaction">
                         <span class="transaction-icon">⚡</span>
                         <p class="t-item">Electricity Bill</p>
                         <span class="expense">-₹850</span>
                     </div>
-
                     <div class="transaction">
                         <span class="transaction-icon">📦</span>
                         <p class="t-item">Amazon</p>
                         <span class="expense">-₹499</span>
                     </div>
-
                 </div>
-
             </div>
 
         </section>
-
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>

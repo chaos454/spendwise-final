@@ -1,8 +1,4 @@
 
-/* ==============================
-   SPENDWISE COLOR PALETTE
-================================ */
-
 :root {
     --bg-primary: #0B0F12;
     --bg-sidebar: #162021;
@@ -18,16 +14,10 @@
     --text-secondary: #8A9490;
 
     --border: #24312E;
-
     --income: #20D68A;
     --expense: #E5484D;
     --warning: #F5B942;
 }
-
-
-/* ==============================
-   GLOBAL STYLING
-================================ */
 
 * {
     box-sizing: border-box;
@@ -37,7 +27,7 @@ body {
     display: flex;
     margin: 0;
     min-height: 100vh;
-    background-color: var(--bg-primary);
+    background: var(--bg-primary);
     color: var(--text-primary);
     font-family: Arial, sans-serif;
 }
@@ -46,21 +36,19 @@ h2, h3, p {
     margin-top: 0;
 }
 
-
-/* ==============================
-   SIDEBAR
-================================ */
+/* SIDEBAR */
 
 .sidebar {
     width: 230px;
     min-width: 230px;
+    min-height: 100vh;
     height: 100vh;
     position: sticky;
     top: 0;
     padding: 25px 16px;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-sidebar);
+    background: var(--bg-sidebar);
     border-right: 1px solid var(--border);
 }
 
@@ -98,11 +86,11 @@ nav {
 
 .nav-link:hover {
     color: var(--text-primary);
-    background-color: var(--bg-card-hover);
+    background: var(--bg-card-hover);
 }
 
 .nav-link.active {
-    background-color: var(--bg-active);
+    background: var(--bg-active);
     color: var(--accent-bright);
     font-weight: bold;
 }
@@ -117,28 +105,23 @@ nav {
     border-top: 1px solid var(--border);
 }
 
-
-/* ==============================
-   MAIN CONTENT
-================================ */
+/* MAIN CONTENT */
 
 .main-content {
     flex: 1;
     min-width: 0;
     padding: 25px 30px;
     overflow-y: auto;
-    background-color: var(--bg-primary);
+    background: var(--bg-primary);
 }
 
-
-/* ==============================
-   HEADER
-================================ */
+/* HEADER */
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
     margin-bottom: 30px;
 }
 
@@ -150,7 +133,11 @@ nav {
     padding: 10px 14px;
     border-radius: 10px;
     border: 1px solid var(--border);
-    background-color: var(--bg-card);
+    background: var(--bg-card);
+}
+
+.search-container:focus-within {
+    border-color: var(--accent);
 }
 
 .search-icon {
@@ -195,16 +182,13 @@ nav {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: var(--accent-soft);
+    background: var(--accent-soft);
     color: var(--accent-bright);
     font-weight: bold;
     margin: 0;
 }
 
-
-/* ==============================
-   WELCOME SECTION
-================================ */
+/* WELCOME */
 
 .spendwise {
     margin-bottom: 25px;
@@ -221,10 +205,7 @@ nav {
     font-size: 14px;
 }
 
-
-/* ==============================
-   FINANCIAL SUMMARY
-================================ */
+/* FINANCIAL SUMMARY */
 
 .financial-summary {
     display: flex;
@@ -240,7 +221,7 @@ nav {
     min-width: 0;
     padding: 20px;
     border-radius: 12px;
-    background-color: var(--bg-card);
+    background: var(--bg-card);
     border: 1px solid var(--border);
     transition: 0.25s ease;
 }
@@ -249,7 +230,8 @@ nav {
 .spent:hover,
 .income:hover,
 .savings:hover {
-    background-color: var(--bg-card-hover);
+    background: var(--bg-card-hover);
+    border-color: #315044;
     transform: translateY(-3px);
 }
 
@@ -274,7 +256,7 @@ nav {
     width: 35px;
     height: 35px;
     border-radius: 10px;
-    background-color: var(--accent-soft);
+    background: var(--accent-soft);
     color: var(--accent-bright);
     font-size: 18px;
     margin: 0;
@@ -296,10 +278,7 @@ nav {
     color: var(--accent-bright);
 }
 
-
-/* ==============================
-   SPENDING OVERVIEW
-================================ */
+/* SPENDING OVERVIEW */
 
 .spending-overview {
     display: flex;
@@ -312,7 +291,7 @@ nav {
     min-width: 0;
     padding: 22px;
     border-radius: 12px;
-    background-color: var(--bg-card);
+    background: var(--bg-card);
     border: 1px solid var(--border);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
@@ -323,10 +302,7 @@ nav {
     margin-bottom: 22px;
 }
 
-
-/* ==============================
-   DONUT CHART
-================================ */
+/* DONUT CHART */
 
 .spending-chart {
     display: flex;
@@ -364,10 +340,7 @@ nav {
     color: var(--text-secondary);
 }
 
-
-/* ==============================
-   SPENDING DETAILS
-================================ */
+/* SPENDING DETAILS */
 
 .spending-details {
     flex: 1;
@@ -393,34 +366,14 @@ nav {
     border-radius: 50%;
 }
 
-.food {
-    background-color: #20D68A;
-}
+.food { background: #20D68A; }
+.transport { background: #159C70; }
+.entertainment { background: #F5B942; }
+.utilities { background: #5687E8; }
+.healthcare { background: #B47BE8; }
+.others { background: #8A9490; }
 
-.transport {
-    background-color: #159C70;
-}
-
-.entertainment {
-    background-color: #F5B942;
-}
-
-.utilities {
-    background-color: #5687E8;
-}
-
-.healthcare {
-    background-color: #B47BE8;
-}
-
-.others {
-    background-color: #8A9490;
-}
-
-
-/* ==============================
-   RECENT TRANSACTIONS
-================================ */
+/* RECENT TRANSACTIONS */
 
 .recent-transactions {
     display: flex;
@@ -445,7 +398,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--bg-card-hover);
+    background: var(--bg-card-hover);
     border-radius: 9px;
     font-size: 16px;
 }
@@ -463,13 +416,9 @@ nav {
     font-weight: bold;
 }
 
-
-/* ==============================
-   RESPONSIVE DESIGN
-================================ */
+/* RESPONSIVE */
 
 @media (max-width: 1100px) {
-
     .financial-summary {
         flex-wrap: wrap;
     }
@@ -484,11 +433,9 @@ nav {
     .spending-overview {
         flex-direction: column;
     }
-
 }
 
 @media (max-width: 700px) {
-
     body {
         flex-direction: column;
     }
@@ -497,6 +444,7 @@ nav {
         width: 100%;
         min-width: 0;
         height: auto;
+        min-height: auto;
         position: relative;
         padding: 15px;
     }
@@ -540,5 +488,22 @@ nav {
     .search-container {
         width: 75%;
     }
+}
 
+@media (max-width: 420px) {
+    .main-content {
+        padding: 14px;
+    }
+
+    .so-icon {
+        padding: 16px;
+    }
+
+    .spendwise h2 {
+        font-size: 21px;
+    }
+
+    .amount {
+        font-size: 22px;
+    }
 }
