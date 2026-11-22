@@ -1,0 +1,544 @@
+
+/* ==============================
+   SPENDWISE COLOR PALETTE
+================================ */
+
+:root {
+    --bg-primary: #0B0F12;
+    --bg-sidebar: #162021;
+    --bg-card: #121619;
+    --bg-card-hover: #192322;
+    --bg-active: #03432B;
+
+    --accent: #13B06B;
+    --accent-bright: #20D68A;
+    --accent-soft: #173D30;
+
+    --text-primary: #F2F5F3;
+    --text-secondary: #8A9490;
+
+    --border: #24312E;
+
+    --income: #20D68A;
+    --expense: #E5484D;
+    --warning: #F5B942;
+}
+
+
+/* ==============================
+   GLOBAL STYLING
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: Arial, sans-serif;
+}
+
+h2, h3, p {
+    margin-top: 0;
+}
+
+
+/* ==============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    width: 230px;
+    min-width: 230px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 25px 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+}
+
+.heading {
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 55px;
+}
+
+.heading b {
+    color: var(--accent-bright);
+}
+
+.heading i {
+    font-style: normal;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.nav-link {
+    display: block;
+    padding: 13px 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-card-hover);
+}
+
+.nav-link.active {
+    background-color: var(--bg-active);
+    color: var(--accent-bright);
+    font-weight: bold;
+}
+
+.tagline {
+    margin-top: auto;
+    margin-bottom: 15px;
+    padding: 15px 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+}
+
+
+/* ==============================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 25px 30px;
+    overflow-y: auto;
+    background-color: var(--bg-primary);
+}
+
+
+/* ==============================
+   HEADER
+================================ */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-card);
+}
+
+.search-icon {
+    color: var(--text-secondary);
+    font-size: 20px;
+}
+
+.search-bar {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.search-bar::placeholder {
+    color: var(--text-secondary);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.bell-icon {
+    color: var(--text-secondary);
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.account-container {
+    display: flex;
+    align-items: center;
+}
+
+.account {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--accent-soft);
+    color: var(--accent-bright);
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* ==============================
+   WELCOME SECTION
+================================ */
+
+.spendwise {
+    margin-bottom: 25px;
+}
+
+.spendwise h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.spendwise p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* ==============================
+   FINANCIAL SUMMARY
+================================ */
+
+.financial-summary {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.balance,
+.spent,
+.income,
+.savings {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: 0.25s ease;
+}
+
+.balance:hover,
+.spent:hover,
+.income:hover,
+.savings:hover {
+    background-color: var(--bg-card-hover);
+    transform: translateY(-3px);
+}
+
+.summary-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.summary-heading h3 {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: normal;
+    margin: 0;
+}
+
+.fs-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: var(--accent-soft);
+    color: var(--accent-bright);
+    font-size: 18px;
+    margin: 0;
+}
+
+.amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin: 15px 0 0;
+}
+
+.spent .amount {
+    color: var(--expense);
+}
+
+.income .amount,
+.savings .amount {
+    color: var(--accent-bright);
+}
+
+
+/* ==============================
+   SPENDING OVERVIEW
+================================ */
+
+.spending-overview {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.so-icon {
+    flex: 1;
+    min-width: 0;
+    padding: 22px;
+    border-radius: 12px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.so-icon h3 {
+    font-size: 17px;
+    color: var(--text-primary);
+    margin-bottom: 22px;
+}
+
+
+/* ==============================
+   DONUT CHART
+================================ */
+
+.spending-chart {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.donut-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+}
+
+.donut-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.donut-center h2 {
+    font-size: 21px;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.donut-center p {
+    font-size: 12px;
+    margin-top: 5px;
+    color: var(--text-secondary);
+}
+
+
+/* ==============================
+   SPENDING DETAILS
+================================ */
+
+.spending-details {
+    flex: 1;
+}
+
+.trans {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px;
+}
+
+.s-item {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin: 0;
+}
+
+.legend-dot {
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
+    border-radius: 50%;
+}
+
+.food {
+    background-color: #20D68A;
+}
+
+.transport {
+    background-color: #159C70;
+}
+
+.entertainment {
+    background-color: #F5B942;
+}
+
+.utilities {
+    background-color: #5687E8;
+}
+
+.healthcare {
+    background-color: #B47BE8;
+}
+
+.others {
+    background-color: #8A9490;
+}
+
+
+/* ==============================
+   RECENT TRANSACTIONS
+================================ */
+
+.recent-transactions {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.transaction:last-child {
+    border-bottom: none;
+}
+
+.transaction-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-card-hover);
+    border-radius: 9px;
+    font-size: 16px;
+}
+
+.t-item {
+    flex: 1;
+    color: var(--text-primary);
+    font-size: 13px;
+    margin: 0;
+}
+
+.expense {
+    color: var(--expense);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1100px) {
+
+    .financial-summary {
+        flex-wrap: wrap;
+    }
+
+    .balance,
+    .spent,
+    .income,
+    .savings {
+        flex-basis: 40%;
+    }
+
+    .spending-overview {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        position: relative;
+        padding: 15px;
+    }
+
+    .heading {
+        margin-bottom: 15px;
+    }
+
+    nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .financial-summary {
+        flex-direction: column;
+    }
+
+    .balance,
+    .spent,
+    .income,
+    .savings {
+        flex-basis: auto;
+    }
+
+    .spending-chart {
+        flex-direction: column;
+    }
+
+    .search-container {
+        width: 75%;
+    }
+
+}

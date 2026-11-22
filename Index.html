@@ -1,60 +1,196 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SpendWise | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <section>
-        <p>Spend<span>Wise</span></p>
+
+    <aside class="sidebar">
+
+        <p class="heading"><i>Spend</i><b>Wise</b></p>
+
         <nav>
-            <a href="index.html">Dashboard</a>
-            <a href="transaction.html">Transactions</a>
-            <a href="analytics.html">Analytics</a>
-            <a href="budget.html">Budget</a>
+            <a class="nav-link active" href="dashboard.html">⌂ Dashboard</a>
+            <a class="nav-link" href="Transaction.html">⇄ Transactions</a>
+            <a class="nav-link" href="Analytics.html">▥ Analytics</a>
+            <a class="nav-link" href="Budget.html">◎ Budget</a>
+            <a class="nav-link" href="Goals.html">◉ Goals</a>
+            <a class="nav-link" href="Reports.html">▤ Reports</a>
         </nav>
-        <p>Spend Smart,<br>Live Better.</p>
-    </section>
-    <section>
-        <p>Good Evening, Sir!</p>
-        <p>Here's your spending overview for this month.</p>
-        <section>
-            <div>
-                <p>Total Spent</p>
-                <p>$1,200</p>
-                <p>12% vs last month</p>
+
+        <p class="tagline">
+            Small steps.<br>
+            Big financial goals.
+        </p>
+
+    </aside>
+
+    <main class="main-content">
+
+        <section class="header">
+
+            <div class="search-container">
+                <span class="search-icon">⌕</span>
+                <input type="text" placeholder="Search transactions..."
+                       class="search-bar">
             </div>
-            <div>
-                <p>Total Income</p>
-                <p>$800</p>
-                <p>20% vs last month</p>
+
+            <div class="header-right">
+                <div class="bell-icon">&#x1F514</div>
+                <div class="account-container">
+                    <p class="account">H</p>
+                </div>
             </div>
-            <div>
-                <p>Current Balance</p>
-                <p>$500</p>
-            </div>
-            <div>
-                <p>Monthly Budget</p>
-                <p>$300</p>
-            </div>
+
         </section>
-        <section>
-            <div>
-                <p>Spending Overview</p>
-            </div>
-            <div>
-                <p>Expenses by Category</p>
-            </div>
+
+        <section class="spendwise">
+            <h2>Welcome to SpendWise 👋</h2>
+            <p>Your personal finance management tool.</p>
         </section>
-        <section>
-            <div>
-                <p>Recent Transactions</p>
+
+        <section class="financial-summary">
+
+            <div class="balance">
+                <div class="summary-heading">
+                    <h3>Current Balance</h3>
+                    <p class="fs-icon">₹</p>
+                </div>
+                <p class="amount">₹3,500</p>
             </div>
-            <div>
-                <p>You're on track!</p>
-                <p>You've spent 12% less than last month</p>
+
+            <div class="spent">
+                <div class="summary-heading">
+                    <h3>Total Spent</h3>
+                    <p class="fs-icon">↘</p>
+                </div>
+                <p class="amount">₹1,200</p>
             </div>
-    </section>
+
+            <div class="income">
+                <div class="summary-heading">
+                    <h3>Total Income</h3>
+                    <p class="fs-icon">↗</p>
+                </div>
+                <p class="amount">₹2,500</p>
+            </div>
+
+            <div class="savings">
+                <div class="summary-heading">
+                    <h3>Savings</h3>
+                    <p class="fs-icon">✦</p>
+                </div>
+                <p class="amount">₹1,300</p>
+            </div>
+
+        </section>
+
+        <section class="spending-overview">
+
+            <div class="so-icon">
+
+                <h3>Spending Overview</h3>
+
+                <div class="spending-chart">
+
+                    <div class="donut-wrapper">
+                        <canvas id="spendChart"></canvas>
+
+                        <div class="donut-center">
+                            <h2 id="totalSpent">₹ 0</h2>
+                            <p>Total Spent</p>
+                        </div>
+                    </div>
+
+                    <div class="spending-details">
+
+                        <div class="trans">
+                            <span class="legend-dot food"></span>
+                            <p class="s-item">Food & Dining: ₹400</p>
+                        </div>
+
+                        <div class="trans">
+                            <span class="legend-dot transport"></span>
+                            <p class="s-item">Transportation: ₹200</p>
+                        </div>
+
+                        <div class="trans">
+                            <span class="legend-dot entertainment"></span>
+                            <p class="s-item">Entertainment: ₹150</p>
+                        </div>
+
+                        <div class="trans">
+                            <span class="legend-dot utilities"></span>
+                            <p class="s-item">Utilities: ₹100</p>
+                        </div>
+
+                        <div class="trans">
+                            <span class="legend-dot healthcare"></span>
+                            <p class="s-item">Healthcare: ₹250</p>
+                        </div>
+
+                        <div class="trans">
+                            <span class="legend-dot others"></span>
+                            <p class="s-item">Others: ₹100</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="so-icon">
+
+                <h3>Recent Transactions</h3>
+
+                <div class="recent-transactions">
+
+                    <div class="transaction">
+                        <span class="transaction-icon">🍔</span>
+                        <p class="t-item">Zomato</p>
+                        <span class="expense">-₹320</span>
+                    </div>
+
+                    <div class="transaction">
+                        <span class="transaction-icon">🚕</span>
+                        <p class="t-item">Uber</p>
+                        <span class="expense">-₹250</span>
+                    </div>
+
+                    <div class="transaction">
+                        <span class="transaction-icon">♫</span>
+                        <p class="t-item">Spotify</p>
+                        <span class="expense">-₹149</span>
+                    </div>
+
+                    <div class="transaction">
+                        <span class="transaction-icon">⚡</span>
+                        <p class="t-item">Electricity Bill</p>
+                        <span class="expense">-₹850</span>
+                    </div>
+
+                    <div class="transaction">
+                        <span class="transaction-icon">📦</span>
+                        <p class="t-item">Amazon</p>
+                        <span class="expense">-₹499</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
