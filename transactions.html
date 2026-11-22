@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise | Add Transaction</title>
+    <link rel="stylesheet" href="transactions.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="app" aria-hidden="true">
+
+        <aside class="sidebar">
+            <p class="heading"><i>Spend</i><b>Wise</b></p>
+
+            <nav>
+                <a class="nav-link" href="index.html">⌂ Dashboard</a>
+                <a class="nav-link active" href="transaction.html">⇄ Transactions</a>
+                <a class="nav-link" href="analytics.html">▥ Analytics</a>
+                <a class="nav-link" href="Budget.html">◎ Budget</a>
+                <a class="nav-link" href="Goals.html">◉ Goals</a>
+                <a class="nav-link" href="Reports.html">▤ Reports</a>
+            </nav>
+
+            <p class="tagline">
+                Small steps.<br>
+                Big financial goals.
+            </p>
+        </aside>
+
+        <main class="main">
+            <h1>Transactions</h1>
+            <p>Track all your expenses and income.</p>
+
+            <div class="row">
+                <span>McDonald's</span>
+                <span>− ₹320</span>
+            </div>
+
+            <div class="row">
+                <span>Uber Ride</span>
+                <span>− ₹250</span>
+            </div>
+
+            <div class="row">
+                <span>Amazon</span>
+                <span>− ₹1,299</span>
+            </div>
+
+            <div class="row">
+                <span>Spotify Premium</span>
+                <span>− ₹149</span>
+            </div>
+
+            <div class="row">
+                <span>Salary</span>
+                <span>+ ₹25,000</span>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Add Transaction Modal -->
+    <div class="overlay" id="overlay">
+
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="title">
+
+            <!-- Wallet Illustration -->
+            <div class="art" aria-hidden="true">
+
+                <span class="spark" style="top:30%;left:12%">✦</span>
+                <span class="spark" style="top:18%;right:16%;font-size:12px">✦</span>
+
+                <svg viewBox="0 0 200 180" fill="none">
+
+                    <rect x="52" y="22" width="86" height="54" rx="6"
+                        fill="#20D68A" transform="rotate(-10 95 49)"/>
+
+                    <rect x="60" y="30" width="86" height="50" rx="6"
+                        fill="#13B06B" transform="rotate(-5 103 55)"/>
+
+                    <rect x="20" y="52" width="140" height="108" rx="18"
+                        fill="#0f7a3e"/>
+
+                    <rect x="20" y="52" width="140" height="108" rx="18"
+                        fill="url(#g)"/>
+
+                    <rect x="108" y="88" width="60" height="38" rx="12"
+                        fill="#0a5a2c" stroke="#20D68A" stroke-width="3"/>
+
+                    <circle cx="130" cy="107" r="6" fill="#20D68A"/>
+
+                    <circle cx="150" cy="150" r="16" fill="#F5B942"/>
+
+                    <circle cx="150" cy="150" r="10"
+                        fill="none" stroke="#c98a12" stroke-width="2"/>
+
+                    <defs>
+                        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#2ee07f" stop-opacity=".35"/>
+                            <stop offset="1" stop-color="#000" stop-opacity=".25"/>
+                        </linearGradient>
+                    </defs>
+
+                </svg>
+            </div>
+
+            <!-- Transaction Form -->
+            <form class="form" id="form" novalidate>
+
+                <div class="head">
+                    <h2 id="title">Add Transaction</h2>
+                    <button type="button" class="close" id="closeBtn"
+                        aria-label="Close">×</button>
+                </div>
+
+                <!-- Expense / Income -->
+                <div class="tabs" role="tablist">
+
+                    <button type="button"
+                        class="tab active"
+                        data-type="expense"
+                        role="tab">
+                        Expense
+                    </button>
+
+                    <button type="button"
+                        class="tab"
+                        data-type="income"
+                        role="tab">
+                        Income
+                    </button>
+
+                </div>
+
+                <!-- Category -->
+                <label for="category">Category</label>
+
+                <div class="field">
+                    <select id="category"></select>
+                </div>
+
+                <!-- Amount -->
+                <label for="amount">Amount</label>
+
+                <div class="field">
+                    <span class="rupee">₹</span>
+
+                    <input
+                        id="amount"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="Enter amount"
+                        inputmode="decimal">
+                </div>
+
+                <div class="error" id="amountErr"></div>
+
+                <!-- Date -->
+                <label for="date">Date</label>
+
+                <div class="field">
+                    <input id="date" type="date">
+                </div>
+
+                <!-- Description -->
+                <label for="note">Description (Optional)</label>
+
+                <div class="field">
+                    <input id="note" type="text" placeholder="Add a note...">
+                </div>
+
+                <!-- Buttons -->
+                <div class="actions">
+
+                    <button type="button" class="btn cancel" id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="btn add">
+                        Add Transaction
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
